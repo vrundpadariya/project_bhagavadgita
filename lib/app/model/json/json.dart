@@ -1,11 +1,11 @@
-class verses {
-  int id;
+class AllData {
+  String id;
   String chapter;
   String sanskrit;
   String gujarati;
   String hindi;
 
-  verses({
+  AllData({
     required this.id,
     required this.chapter,
     required this.gujarati,
@@ -13,8 +13,8 @@ class verses {
     required this.sanskrit,
   });
 
-  factory verses.fromjson({required Map data}) {
-    return verses(
+  factory AllData.fromjson({required Map data}) {
+    return AllData(
         id: data['id'],
         chapter: data['chapter'],
         gujarati: data['gujarati'],
