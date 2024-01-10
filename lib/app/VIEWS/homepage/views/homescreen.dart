@@ -27,18 +27,16 @@ class homescreen extends StatelessWidget {
             var decodedData = jsonDecode(snapshot.data!);
             List allData =
                 decodedData.map((e) => AllData.fromjson(data: e)).toList();
-            return GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, 'detail',
-                    arguments: allData);
-              },
-              child: ListView.builder(
-                itemCount: allData.length,
-                itemBuilder: (context, i) => Card(
-                  child: ListTile(
-                    title: Text("${allData[i].id}"),
-                    subtitle: Text("${allData[i].sanskrit}"),
-                  ),
+            return ListView.builder(
+              itemCount: allData.length,
+              itemBuilder: (context, i) => Card(
+                child: ListTile(
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, 'detail',
+                        arguments: allData[i]);
+                  },
+                  title: Text("${allData[i].id}"),
+                  subtitle: Text("${allData[i].sanskrit}"),
                 ),
               ),
             );

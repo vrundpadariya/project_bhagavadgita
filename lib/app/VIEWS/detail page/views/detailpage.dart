@@ -1,76 +1,77 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../../../model/json/json.dart';
 
 class detailpage extends StatelessWidget {
   const detailpage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    allData data = ModalRoute.of(context)!.settings.arguments as allData;
-    return Scaffold(
-      body: Container(
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              "assets/images/s.jpg",
-            ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 90,
-                ),
-                Text(
-                  "${data.sanskrut}",
-                  style: const TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Color(
-                      0xff820000,
-                    ),
-                  ),
-                ),
-                const Divider(
-                  thickness: 2,
-                  height: 3,
-                  color: Color(
-                    0xff820000,
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "${data.gujrati}",
-                  style: const TextStyle(
-                    fontSize: 20, fontWeight: FontWeight.w600,
-                    // fontWeight: FontWeight.bold,
-                    color: Color(0xff820000),
-                  ),
-                ),
+    AllData? alldata = ModalRoute.of(context)!.settings.arguments as AllData?;
 
-                const SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  "${data.english}",
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("${alldata?.chapter}"),
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 10,
           ),
-        ),
+          Container(
+            height: 100,
+            width: 250,
+            alignment: Alignment.center,
+            child: Text("${alldata?.sanskrit}",
+                style: TextStyle(fontWeight: FontWeight.bold)),
+          ),
+          SizedBox(
+            height: 80,
+          ),
+          Divider(
+            height: 10,
+            indent: 10,
+            endIndent: 10,
+            color: Colors.orange,
+          ),
+          Text("Verses Translated in Gujarti:-"),
+          SizedBox(
+            height: 10,
+          ),
+          Text("${alldata?.gujarati}",
+              style: TextStyle(fontWeight: FontWeight.bold)),
+          SizedBox(
+            height: 80,
+          ),
+          Divider(
+            height: 10,
+            indent: 10,
+            endIndent: 10,
+            color: Colors.orange,
+          ),
+          Text(
+            "Verses Translated in Hindi:-",
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text("${alldata?.hindi}",
+              style: TextStyle(fontWeight: FontWeight.bold)),
+          SizedBox(
+            height: 50,
+          ),
+          Container(
+            height: 200,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage("lib/app/model/asset/geeta.png"),
+            )),
+          ),
+        ],
       ),
     );
-  };
   }
 }

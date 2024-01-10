@@ -20,7 +20,7 @@ class Splacescreen extends StatelessWidget {
             image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
-                "lib/app/asset/1.png",
+                "lib/app/model/asset/1.png",
               ),
             ),
           ),

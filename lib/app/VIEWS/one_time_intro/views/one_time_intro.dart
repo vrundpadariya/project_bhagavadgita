@@ -22,7 +22,7 @@ class introscreen extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    "lib/app/asset/SPLASH_SCREEN.gif",
+                    "lib/app/model/asset/SPLASH_SCREEN.gif",
                   ),
                 ),
               ),
@@ -39,7 +39,7 @@ class introscreen extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    "lib/app/asset/2b.png",
+                    "lib/app/model/asset/4b.jpeg",
                   ),
                 ),
               ),
@@ -56,7 +56,7 @@ class introscreen extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    "lib/app/asset/3bb.jpeg",
+                    "lib/app/model/asset/3bb.jpeg",
                   ),
                 ),
               ),
@@ -73,7 +73,7 @@ class introscreen extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage(
-                    "lib/app/asset/4bb.png",
+                    "lib/app/model/asset/2b.jpeg",
                   ),
                 ),
               ),
